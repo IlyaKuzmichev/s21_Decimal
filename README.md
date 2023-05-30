@@ -8,7 +8,7 @@
 
 1. [Information](#information) 
 2. [Task](#task) \
-   2.1. [Part 1](#part-1-implementation-of-the-decimalh-library-functions)  \
+   2.1. [Part 1](#part-1-implementation-of-the-decimalh-library-functions)  
 3. [Implementation](#implementation) 
 
 ## Information
@@ -141,3 +141,5 @@ The functions of the decimal.h library described [above](#information) must be i
 - It is forbidden to use the __int128 type
 - Trailing zeros can be as preserved as deleted (except for the `s21_truncate` function)
 - The defined type must support numbers from -79,228,162,514,264,337,593,543,950,335 to +79,228,162,514,264,337,593,543,950,335.
+
+## Implementation
