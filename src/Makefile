@@ -72,14 +72,11 @@ clean:
 	@rm -rf  $(OBJECTS)
 	@rm -rf report/ gcovr/ s21_decimal.a *.gcda *.gcno *.gcov *.out *.info *.o coverage.txt *.dSYM
 
-.clang-format:
-	@cp ../materials/linters/.clang-format .
-	
-stylecheck: .clang-format
-	@clang-format -n $(FILES_TO_CHECK)
+stylecheck: 
+	@clang-format -style=Google -n $(FILES_TO_CHECK)
 	
 fmt: .clang-format
-	@clang-format -i $(FILES_TO_CHECK)
+	@clang-format -style=Google -n $(FILES_TO_CHECK)
 
 cppcheck:
 	cppcheck --enable=all --suppress=missingIncludeSystem $(FILES_TO_CHECK)
