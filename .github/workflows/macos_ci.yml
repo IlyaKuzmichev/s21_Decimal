@@ -26,6 +26,24 @@ jobs:
       - name: Build project
         working-directory: ./src
         run: make
+  
+  style:
+    runs-on: macos-latest
+
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Style test
+        working-directory: ./src
+        run: make stylecheck
 
   test:
     runs-on: macos-latest
